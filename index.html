@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Подключаем шрифты -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+<body>
+    <!-- Создаем хедер -->
+    <header>
+        <div class="container">
+            <!-- Находим навигацию в бутстрапе,навбар, удаляем дизейблд, тк в макете его нет -->
+            <!-- Классы navbar-light and bg-light мы меняем на navbar-dark(означает, что цвет в навигации белый) bg-dark(задний фон самой навигации чёрный) -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <!-- Вместо навбар слова, пишем стартап -->
+                <a class="navbar-brand" href="#">Startup</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <!-- Удаляем спан, у ссылки -->
+                      <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <!-- Ссылок 7, поэтому начинаем дублировать ли 4 раза и заполнять-->
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Works</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Clients</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    
+                  </ul>
+                </div>
+              </nav>
+              <h1>welcome to startup</h1>
+              <p>Your Favorite Creative Agency Template</p>
+              <a href="" class="header-btn">get started</a>
+        </div>
+    </header>
+<!-- Новая секция -->
+<section class="services text-center">
+    <div class="container">
+        <h2 class="title">
+            services
+        </h2>
+        <p class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, consectetur.</p>
+        <div class="row">
+            <div class="col-xl-4 col-md-4">
+                <div class="circle">
+                    <i class="fa fa-font"></i>
+                </div>
+                <h4>Clean Typography</h4>
+                <p class="services-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et molestias voluptates, nihil assumenda impedit porro earum odit asperiores quae tempore.</p>
+            </div>
+            <div class="col-xl-4 col-md-4">
+                <div class="circle">
+                    <i class="fa fa-code"></i>
+                </div>
+                <h4>Clean Typography</h4>
+                <p class="services-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et molestias voluptates, nihil assumenda impedit porro earum odit asperiores quae tempore.</p>
+            </div>
+            <div class="col-xl-4 col-md-4">
+                <div class="circle">
+                    <i class="fa fa-support"></i>
+                </div>
+                <h4>Clean Typography</h4>
+                <p class="services-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et molestias voluptates, nihil assumenda impedit porro earum odit asperiores quae tempore.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Cледующая секция -->
+<section class="about">
+    <div class="container">
+        <h2 class="title">about us</h2>
+        <p class="subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+        <div class="row">
+            <div class="col-xl-6">
+                <p class="about-text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem et perspiciatis nemo inventore? Unde error id omnis impedit voluptas culpa deserunt magnam quam dolorem at natus atque vel suscipit esse ullam et, ex magni molestias! Nobis qui blanditiis suscipit sunt quaerat. Laudantium eos laborum incidunt quae velit necessitatibus, voluptatibus adipisci?
+                </p>
+            </div>
+            <div class="col-xl-6">
+                <p class="about-text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem et perspiciatis nemo inventore? Unde error id omnis impedit voluptas culpa deserunt magnam quam dolorem at natus atque vel suscipit esse ullam et, ex magni molestias! Nobis qui blanditiis suscipit sunt quaerat. Laudantium eos laborum incidunt quae velit necessitatibus, voluptatibus adipisci?
+                </p>
+            </div>
+        </div>
+        <!-- Cоздаем див самого слайдера -->
+        <div class="about-slider">
+          <!-- Внутри слайдера у нас есть блоки картинок слайдера, создаем этот блок чтобы поместить туда картинку -->
+          <div class="about-slider-item">
+            <!-- При наведении стоит hover эффект, задний фон и появляются блоки  социальных сетей, для этого нам нужно создать дополнительный блок, на который мы будем наводить и внутри него должен быть контент на который мы будем наводить -->
+            <div class="slider-img">
+              <img src="images/slider_img1.jpg" alt="">
+              <!-- Теперь в этот блок хавера добавляем помимо картинки слайдера, еще и див с сслыками при наведениии -->
+              <div class="slider-view">
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+            <!-- После дива с картинками идет надпись -->
+            <h4>md. k halil uddin</h4>
+            <p>head of ideas</p>
+          </div>
+          <div class="about-slider-item">
+            <!-- При наведении стоит hover эффект, задний фон и появляются блоки  социальных сетей, для этого нам нужно создать дополнительный блок, на который мы будем наводить и внутри него должен быть контент на который мы будем наводить -->
+            <div class="slider-img">
+              <img src="images/slider_img1.jpg" alt="">
+              <!-- Теперь в этот блок хавера добавляем помимо картинки слайдера, еще и див с сслыками при наведениии -->
+              <div class="slider-view">
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+            <!-- После дива с картинками идет надпись -->
+            <h4>md. khalil uddin</h4>
+            <p>head of ideas</p>
+          </div>
+          <div class="about-slider-item">
+            <!-- При наведении стоит hover эффект, задний фон и появляются блоки  социальных сетей, для этого нам нужно создать дополнительный блок, на который мы будем наводить и внутри него должен быть контент на который мы будем наводить -->
+            <div class="slider-img">
+              <img src="images/slider_img1.jpg" alt="">
+              <!-- Теперь в этот блок хавера добавляем помимо картинки слайдера, еще и див с сслыками при наведениии -->
+              <div class="slider-view">
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+            <!-- После дива с картинками идет надпись -->
+            <h4>md. khalil uddin</h4>
+            <p>head of ideas</p>
+          </div>
+          <div class="about-slider-item">
+            <!-- При наведении стоит hover эффект, задний фон и появляются блоки  социальных сетей, для этого нам нужно создать дополнительный блок, на который мы будем наводить и внутри него должен быть контент на который мы будем наводить -->
+            <div class="slider-img">
+              <img src="images/slider_img1.jpg" alt="">
+              <!-- Теперь в этот блок хавера добавляем помимо картинки слайдера, еще и див с сслыками при наведениии -->
+              <div class="slider-view">
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+            <!-- После дива с картинками идет надпись -->
+            <h4>md. khalil uddin</h4>
+            <p>head of ideas</p>
+          </div>
+          <div class="about-slider-item">
+            <!-- При наведении стоит hover эффект, задний фон и появляются блоки  социальных сетей, для этого нам нужно создать дополнительный блок, на который мы будем наводить и внутри него должен быть контент на который мы будем наводить -->
+            <div class="slider-img">
+              <img src="images/slider_img1.jpg" alt="">
+              <!-- Теперь в этот блок хавера добавляем помимо картинки слайдера, еще и див с сслыками при наведениии -->
+              <div class="slider-view">
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+            <!-- После дива с картинками идет надпись -->
+            <h4>md. khalil uddin</h4>
+            <p>head of ideas</p>
+          </div>
+          <div class="about-slider-item">
+            <!-- При наведении стоит hover эффект, задний фон и появляются блоки  социальных сетей, для этого нам нужно создать дополнительный блок, на который мы будем наводить и внутри него должен быть контент на который мы будем наводить -->
+            <div class="slider-img">
+              <img src="images/slider_img1.jpg" alt="">
+              <!-- Теперь в этот блок хавера добавляем помимо картинки слайдера, еще и див с сслыками при наведениии -->
+              <div class="slider-view">
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+            <!-- После дива с картинками идет надпись -->
+            <h4>md. khalil uddin</h4>
+            <p>head of ideas</p>
+          </div>
+        </div>
+    </div>
+</section>
+
+<!-- Создаем новую секцию -->
+<section class="works">
+  <div class="container">
+    <h2 class="title">latest works</h2>
+    <!-- Див где будут кнопки для переключания -->
+    <div class="gallery-btns">
+      <button class="active-btn">All</button>
+      <button>Branding</button>
+      <button>Design</button>
+      <button>Development</button>
+      <button>Strategy</button>
+    </div>
+    <!-- Теперь нам нужно по 3 картинки в строчку, создаем под него дивы -->
+          <div class="row">
+            <div class="col-xl-4">
+    <!-- Нужно под оформление этих картинок два дива.Один в который мы поместим картиинку(которая будет отображатся как обычный img), другой который будет появляться прии  наведении hover(розовый фон надписи ссылки) -->
+              <!-- Див при наведении -->
+              <div class="gallery-item">
+                <img src="images/works_image1.jpg" alt="" class="w-100">
+                <div class="gallery-view">
+                  <h5>hair dresser</h5>
+                  <p>Branding</p>
+                  <!-- Используем плагин, увелечения картинок data-fancybox="любое название" означает, что начинается использования плагина, а в атрибут href="" мы указываем путь к большой картинке -->
+                  <a data-fancybox="img" href="images/header_bg.jpg">view <i class="fa fa-angle-right"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4">
+    <!-- Нужно под оформление этих картинок два дива.Один в который мы поместим картиинку(которая будет отображатся как обычный img), другой который будет появляться прии  наведении hover(розовый фон надписи ссылки) -->
+              <!-- Див при наведении -->
+              <div class="gallery-item">
+                <img src="images/works_image1.jpg" alt="" class="w-100">
+                <div class="gallery-view">
+                  <h5>hair dresser</h5>
+                  <p>Branding</p>
+                  <!-- Используем плагин, увелечения картинок data-fancybox="любое название" означает, что начинается использования плагина, а в атрибут href="" мы указываем путь к большой картинке -->
+                  <a data-fancybox="img" href="images/header_bg.jpg">view <i class="fa fa-angle-right"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4">
+    <!-- Нужно под оформление этих картинок два дива.Один в который мы поместим картиинку(которая будет отображатся как обычный img), другой который будет появляться прии  наведении hover(розовый фон надписи ссылки) -->
+              <!-- Див при наведении -->
+              <div class="gallery-item">
+                <img src="images/works_image1.jpg" alt="" class="w-100">
+                <div class="gallery-view">
+                  <h5>hair dresser</h5>
+                  <p>Branding</p>
+                  <!-- Используем плагин, увелечения картинок data-fancybox="любое название" означает, что начинается использования плагина, а в атрибут href="" мы указываем путь к большой картинке -->
+                  <!-- Если у data-fancybox="" названия одинаковые, тогда можно будет их переключать между собой стрелочками -->
+                  <a data-fancybox="img" href="images/header_bg.jpg">view <i class="fa fa-angle-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+  </div>
+</section>
+
+
+
+
+<!-- Как ставить на фон видео превью -->
+ 
+<a data-fancybox="video" href="https://youtu.be/lifDytVyyAQ" class="test">
+  <img src="images/works_image6.jpg" alt="">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. In placeat maiores consequatur.
+</a>
+
+<!-- Как ставить форму, при нажатии на картинку, допустим на форму регестрации или опалаты, или соглашения с правилами-->
+
+<a data-fancybox="inpu" href="#test-form" class="test">
+  <img src="images/works_image6.jpg" alt="">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. In placeat maiores consequatur.
+</a>
+<!-- Создаю форму, скрываю содержимое, дисплей нан, даю идентификатор форме, и ставлю вместо href выше айди формы -->
+<form action="" style="display: none;" id="test-form">
+  <input type="text">
+  <input type="text">
+  <input type="text">
+</form>
+
+
+<script src="js/jquery-3.5.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
+<script>
+  /* Cоздаю скрипт слайдера */
+  $('.about-slider').slick(
+    {
+      /* Говорю , показывай мне 4 слайда */
+      slidesToShow:4 ,
+      /* Кнопки создаю и офрмляю дальше в css */
+      prevArrow:
+      '<button class="left"><i class="fa fa-angle-left"></i></button>' ,
+      nextArrow:
+      '<button class="right"><i class="fa fa-angle-right"></i></button>' ,
+    }
+  );
+</script>
+</body>
+</html>

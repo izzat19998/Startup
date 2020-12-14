@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Подключаем шрифты -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+<body>
+    <!-- Cоздаем слайдер, туда помещаем количество слайдев, тоесть их изображения -->
+<div class="slider">
+    <img src="images/works_image1.jpg" alt="">
+    <img src="images/works_image2.jpg" alt="">
+    <img src="images/works_image3.jpg" alt="">
+    <img src="images/works_image4.jpg" alt="">
+    <img src="images/works_image5.jpg" alt="">
+</div>
+
+<!-- Можно использовать не только картинки вместо слайдеров, но и сам текст. И у нас каждый див будет в виде слайдера изображаться на сайте-->
+<div class="slider2">
+    <div class="item">
+        <h3 class="lorem3">Lorem, ipsum dolor.</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, officia enim dicta aliquam commodi ipsam qui? Dolore, magnam sapiente amet ut quaerat sed voluptatibus dolor ea earum fuga, ipsam ipsa?</p>
+    </div>
+    <div class="item">
+        <h3 class="lorem3">Lorem, ipsum dolor.</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, officia enim dicta aliquam commodi ipsam qui? Dolore, magnam sapiente amet ut quaerat sed voluptatibus dolor ea earum fuga, ipsam ipsa?</p>
+    </div>
+    <div class="item">
+        <h3 class="lorem3">Lorem, ipsum dolor.</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, officia enim dicta aliquam commodi ipsam qui? Dolore, magnam sapiente amet ut quaerat sed voluptatibus dolor ea earum fuga, ipsam ipsa?</p>
+    </div>
+</div>
+
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <!-- Cоздаем мозг слайдера -->
+    <script>
+        /* В скобках мы должны указать класс дива с которого мы должны будеv брать картинки, тоесть класс слайдера, + используем функцию слик, чтобы дать команду работать плагину */
+        /* Внутри функции slick(), мы заключаем программный код {} */
+        $('.slider').slick(
+        {
+            autoplay:true , /* Включает автоплей */
+            autoplaySpeed: 1000 , /* Скорость автоплея в мили секундах */
+            arrows:true , /* Кнопочки previous and next , их можно отключать */
+            prevArrow: '<button type="button" class="btn btn-primary btn-sm left">Предыдуший</button>' , /* Отвечает за кнопку, предыдуший, в ковычки мы заключаем оформленную кнопку */
+            nextArrow:'<button type="button" class="btn btn-secondary btn-sm right">Следующий</button>'
+             /* Отвечает за кнопку следующий, в ковычки мы заключаем оформленную кнопку */
+            /*   !!! centerMode работает только с SlidesToShow */
+            dots:true , /* Индикаторы , по умолчанию это кнопки */
+            dotsClass: 'New-new' , /* Cоздает класс для индикаторов, который меняет класс во всем коде индикаторов который есть в слик, и так мы можем создавать несколько слайдеров на странице, с разными стилями */
+            draggable: false , /* Чтобы мы могли передвигать мышкой слайдеры */
+            fade: true , /* Картинки плавно исчезают и появляются, при нажатии на кнопку */
+            infinite:false , /* Когда слайд доходит до последней картинки, он дальше уже не крутит, надо идти назад, по умолчанию правда */
+            pauseOnFocus:false, /* Когда автомотическое воспроизведение слайдовв идет, если взять фокус на слайд, то он останавливается и замирает на том слайде, который ввзят под фокус */
+            pauseOnHover:false ,  /* Когда автомотическое воспроизведение слайдовв идет, если навести, то он останавливается и замирает на том слайде на котором он наведен*/
+            pauseOnDotsHover:true, /* Когда автомотическое воспроизведение слайдовв идет и навести на индикатор, слайдер останавливает крутится */
+            responsive:none, /* Адаптивность */
+            rows:2, /* Cколько строчек будет у слайдера, по умолчанию 1 */
+            slidesPerRow:2 , /* Сколько слайдов будет в одной строке */
+            slidesToShow:3 , /* По умолчанию отображается 1 слайд в слайдере, но с fade он не работает */
+            slidesToScroll:2, /* По сколько слайдов он двигает за клик на кнопку */
+            speed:3000 , /* Тоже самое что и fade, но плавность в этом случае мы настраиваем в ручную */
+            swipe:true , /* Можем ли листать слайды в телефонах, по умолчанию включено */
+            vertical:true , /* Слайды меняются в горизонтально, а не вертикально. По умолчанию отключено */
+           centerMode:true , /* Означает что центральная картинка будет более заметной, slidestoshow должен быть нечётным , добавляет к ниму дополнительный класс slick-center*/
+           centerPadding: '200px' /* Означает, сколько будет выглядывать картинка в пикселях, следующая в очереди с лева и с права */
+            
+            
+            /* АДАПТАЦИЯ СЛАЙДЕРА */
+            
+            responsive: [
+    {
+      breakpoint: 1024, /* На экранах меньше */
+      settings: {
+        slidesToShow: 3, /* Сколько слайдов показывавется */
+        slidesToScroll: 3, /* Сколько слайдов прокручивается за клик */
+        infinite: true,  /* Остановка , после слайдов */
+        dots: true /* Индикаторы */
+        /* Суда же мы можем добавить новые настройки и на разные устройства */
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+
+        } 
+        );
+        
+    </script>
+</body>
+</html>

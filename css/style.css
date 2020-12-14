@@ -1,0 +1,326 @@
+*,h1,h2,h3,h4,h5,h6,p,ul{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+a,
+a:hover{
+    text-decoration: none;
+}
+/* 1.1)Впервую очередь мы проверили какие шрифты будут использованы и подключили их, задали для всего бади шрифт который используется больше всего, так же цвет и размер */
+body{
+    font-family: 'Roboto Slab';
+    font-weight: 400;
+    background: #fff;
+}
+/* Смотрим на макет и анализируем. У нас будеет хедер, внутрии хедера будет контейнер, а внутри контейнера навигация и все остальное */
+
+/* 1.2)Для хедара задаем паддинги и бекграунд */
+header{
+    padding: 40px 0 260px;
+    background: url('../images/header_bg.jpg') no-repeat center center / cover;
+    text-align: center;
+}
+/* Убераем лишние свойства (паддинги) у самой навигации, смотрим в админ панель и убираем */
+.bg-dark{
+    background: none !important;
+}
+/* И надо задать отступ снизу */
+.navbar{
+    padding: 0;
+    margin-bottom: 260px;
+}
+/* Cтили для нашей Startup */
+.navbar-brand{
+    padding: 0;
+    margin: 0;
+    font-size: 24px;
+    font-family: 'Montserrat';
+    font-weight: 700;
+}
+/* Cтили для наших лишек */
+.navbar-nav .nav-link{
+    padding: 0 !important;
+    color: #fff !important;
+    font-family: 'Montserrat';
+    font-size: 14px;
+}
+/* Мы убрали все паддинги */
+/* 1.3)Теперь в навигации мы находим класс, который отвечает за расположение элементов и раздвигаем навигацию по макету */
+.navbar-collapse{
+    justify-content: flex-end;
+    align-items: center !important;
+}
+/* Задаем через маржины нашему родителю, через ласт чайлд отступы справа */
+.navbar-nav .nav-item:not(:last-child){
+    margin-right: 35px;
+}
+/* Cтили для надписей */
+h1{
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 48px;
+    font-family: 'Montserrat';
+    margin-bottom: 33px;
+}
+header p{
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 50px;
+}
+.header-btn{
+    color: #fff !important;
+    text-transform: uppercase;
+    font-family: 'Montserrat';
+    font-size: 16px;
+    padding: 19px 35px;
+    display: inline-block;
+    border-radius: 2px;
+    border: 2px solid #ffff;
+}
+/* Задаем секциям свойства, схожие свойства всем */
+section{
+    padding: 100px 0;
+}
+/* Задаем сввойства трем объектам для всех секций */
+.title{
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat';
+    color: #555;
+    font-size: 20px;
+    position: relative;
+    margin-bottom: 59px;
+}
+.title::after{
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    background: #555;
+    bottom: -29px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.subtitle{
+    text-align: center;
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 70px;
+}
+/* Cвойства для картинок впервой секции */
+.circle{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    margin: 0 auto 29px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: #c0301c;
+    transition: 0.6s;
+}
+/* Когда наводим на секцию, меняем образ картинки */
+.services .col-xl-4:hover .circle {
+    background: #c0301c;
+    color: #fff;
+}
+/* Оформляем текст внутри секции */
+.services h4{
+    text-transform: uppercase;
+    font-family: 'Montserrat';
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+.services-text{
+    color: #555;
+    font-size: 14px;
+    line-height: 24px;
+}
+/* CЛЕД СЕКЦИЯ */
+.about{
+    background: #f8f8f8;
+}
+.about-text{
+    font-size: 14px;
+    color: #555;
+    line-height: 24px;
+}
+/* В slick slaider элементы позицианируются по методу float , который является устаревшим методом */
+/* В блоке, где у нас находится слайды, мы даем слева и справа отступ по 15пх, чтобы между картинками в слайдах были отступы по 15, как в макете */
+.about-slider-item{
+    padding: 0 15px;
+    outline: none !important;
+}
+/* Чтобы картинки были в том формате, в котором мы скачали */
+.about-slider-item img{
+    width: 100%;
+}
+/* Внутри .slider-img где лежать у нас картинки, есть слайдер slider-view с ссылкамии, мы должны задать .slider-img position relative , чтобы расположить блоки с ссылкой*/
+.slider-img{
+    position: relative;
+}
+/* Распологаем блоки ссылкой и оформляем */
+.slider-view{
+    position: absolute; /* Будем распологать относительно блока slider-img */
+    width: 100%;   /* По ширине он будет занимать всю шиирину блока slider-img */
+    height: 100%; /* По высоте он будет занимать всю высоту блока slider-img */
+    top: 0; /* Распологаем по верху */
+    left: 0; 
+    background: #55555580; /* Задаем задний фон для иконок, но из за того, что иконки занимают всю ширину и высоту зоны контента, задний фон добавится на всю картинку */
+    padding-bottom: 30px; /* Отступ снизу должен быть у блоков каждой иконки*/
+    display: flex; /* Теперь располагаем блоки <i></i> внутри картинки при помощи флексов, она будет работать на блок с иконками  */
+    justify-content: center;
+    align-items:flex-end;
+    opacity: 0; /* Чтобы скрыть див, и раскрыть его в будущем при наведении */
+    transition: 0.4s; /* Для hover, чтобы плавно появлялся */
+}
+/* Теперь надо оформить непосредственно ссылки */
+.slider-view a{
+    width: 28px;
+    height: 28px;
+    /* Теперь иконки надо выравнить внутри ссылки */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff !important;
+}
+/* Теперь должен быть эффект при наведении на ссылки */
+.slider-view a:hover{
+    background: #c0301c;
+}
+/* Мы должны сделать так, чтобы блоки и задний фон появлялся только при наведении */
+/* Тоесть мы при наведении на нужный нам блок, показываем оформленный блок slider-view */
+.about-slider-item:hover .slider-view{
+    opacity: 1;
+}
+/* Оформляем заголовок */
+.about-slider-item h4{
+    text-align: center;
+    margin: 20px 0 15px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: 'Montserrat';
+    color: #555;
+}
+.about-slider-item p{
+    text-align: center;
+    font-size: 13px;
+    color: #555;
+    text-transform: capitalize;
+}
+/* Оформляем кнопки */
+.left , .right{
+    width: 35px;
+    height: 38px;
+    background: #55555534;
+    border: none;
+    color: #fff;
+    outline: none !important;
+    font-size: 20px;/* размер иконки, заключенный в кнопку */
+    position: absolute; /* position relative у кнопок по умолчанию являются сами картинки */
+    z-index: 22; /* Чтобы картинка не перекрывала кнопки */
+    top: 107px;
+} 
+/* Эффект при наведении на кнопки */
+.left:hover,.right:hover{
+    background: #c0301c;
+}
+.left{
+    left:15px;
+}
+.right {
+    right:13px;
+}
+/* Чтобы слайдер, оттолкнуть от текста на 70 пх, как в макете */
+.about-slider{
+    margin-top: 70px;
+}
+
+/* CЕКЦИЯ WORKS И ЕЁ ОФОРМЛЕНИЕ */
+/* Оформляем кнопки в диве gallery-btns */
+.gallery-btns{
+    text-align: center;
+    margin-bottom: 70px;
+}
+/* Оформляем непосредственно кнопки */
+.gallery-btns button{
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #555;
+    font-size: 16px;
+    margin: 0 10px;
+}
+/* Для активной кнопки */
+.active-btn{
+   color: #c0301c !important; 
+}
+/* Для gallery-item даем position relative , для gallery-view, чтобы мы могли относительно двигать */
+.works .col-xl-4{
+    padding:0 5px;
+
+}
+.gallery-view{
+  
+    position: absolute; /* Двигаем относительно блока gallery-item */
+    width: 100%; /* Он занимает всю ширину gallery-item */
+    height: 100%;
+    top: 0; /* Рассположение относительно gallery-item */
+    left: 0;
+    background: #c02f1ca6; /* Задний фон */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    /* Убираем все с виду, чтобы он был при наведении */
+    opacity: 0;
+    transition: 0.4s;
+}
+/* Оформляем заголовок h5 */
+.gallery-view h5{
+    font-family: 'Montserrat' !important;
+    font-size: 18px !important; 
+    margin-bottom: 16px !important;
+    text-transform: capitalize;
+}
+/* Оформляем параграф */
+.gallery-view p{
+    font-size: 12px;
+    margin-bottom: 25px;
+    text-transform: capitalize;
+}
+/* Оформляем ссылку */
+.gallery-view a {
+    width: 100px;
+    height: 38px;
+    background: #fff;
+    color: #c0301c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+/* Задаем отступ картинки внутри ссылки и немного увеличиваем */
+.gallery-view .fa{
+    margin-left: 12px;
+    font-size: 20px;
+}
+.gallery-item:hover .gallery-view{
+    opacity: 1;
+}
+.test{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Чтобы картинка не растягивалась */
+    width: 360px;
+    margin-bottom: 100px;
+}

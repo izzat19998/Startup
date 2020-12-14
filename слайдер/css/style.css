@@ -1,0 +1,50 @@
+*,h1,h2,h3,h4,h5,h6,p,ul{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+a,
+a:hover{
+    text-decoration: none;
+}
+/* Мы так же можем поставить эти кнопки в нужные нам место, регулировавть размер, шрифт, все что угодно */
+/* Родителью кнопок является слайдер, поэтому нам достаточно кнопкам дать позицию абсолют и чтобы картинка не перекрывала, сразу дадим зетиндекс, что кнопки у нас могут перекрыть слайдер*/
+.left , .right{
+   position: absolute; 
+   z-index: 2;
+}
+.left{
+    top:0;
+}
+.right{
+    top: 0;
+    right: 0;
+}
+/* Обращаемся к ul в классе dots, чтобы список с кнопками поставить по центру */
+.slick-dots{
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+/* Внутри dots, есть li c кнопками 1 2 3... надо убрать их, чтобы вместо них поставить круглешки */
+.slick-dots button{
+    display: none;
+}
+/* А теперь создаем круглешки */
+.slick-dots li{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+/* У активной li есть класс .slick-active */
+.slick-dots .slick-active
+{
+    background: #000;
+}
+/* Можно увеличить центральную картинку если мы использовали центр мод */
+.slick-center{
+    transform: scale(1.2); /* Означает, увеличиваю его на 20 % от самого изображения */
+}
